@@ -3,7 +3,9 @@ resources:
   pipelines:
     e2e_db_demo_pipeline:
       name: e2e_db_demo_pipeline
-      target: e2e_db_demo_${bundle.environment}
+      target: default
+      photon: true
+      catalog: lr_e2e_demo
       libraries:
         - notebook:
             path: ../src/dlt_pipeline.ipynb
