@@ -1,0 +1,12 @@
+# The main pipeline for e2e_db_demo
+resources:
+  pipelines:
+    e2e_db_demo_pipeline:
+      name: e2e_db_demo_pipeline
+      target: e2e_db_demo_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
